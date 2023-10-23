@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  drawBackground(0, 0);
   drawCard();
   drawCreature(100,100,color(28,198,229), color(4,0,230));
 }
@@ -151,4 +151,45 @@ function drawCreature(x,y, colorBody, colorMouth){
   point(0,30);
 
 pop();
+}
+
+function drawBackground(x,y){
+  push();
+  translate(x,y);
+
+  //bubbles
+  noStroke();
+  fill(170,238,229);
+
+  //left group of bubbles
+  circle(50,90,40);
+  circle(80,40,30);
+  circle(50,10,20);
+  circle(100,90,20);
+  circle(60,140,10);
+  circle(30,40,10);
+
+  //right group of bubbles
+  circle(270,79,25);
+  circle(260,40,15);
+  circle(300,10,20);
+  circle(320,90,20);
+  circle(350,140,10);
+  circle(350,40,10);
+  circle(310,50,30);
+  circle(310,140,30);
+  circle(280,120,10);
+  circle(245,150,10);
+  
+  //sand dunes 
+  fill(240,223,135);
+  arc(20, 400,130,150, PI, 0);
+  arc(90, 400,130,150, PI, 0);
+  arc(160, 400,130,150, PI, 0);
+  arc(230, 400,130,150, PI, 0);
+  arc(300, 400,130,150, PI, 0);
+  arc(370, 400,130,150, PI, 0);
+
+pop();
+
 }
