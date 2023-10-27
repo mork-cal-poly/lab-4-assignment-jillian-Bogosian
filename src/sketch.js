@@ -9,7 +9,7 @@ function setup() {
 
 function draw() {
   drawBackground(0, 0);
-  drawDog(200, 270, 0.2);
+  drawDog(300, 300, 0.2);
   drawCard();
   drawCreature(100, 100, color(28, 198, 229), color(4, 0, 230));
 }
