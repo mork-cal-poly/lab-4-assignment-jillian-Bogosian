@@ -1,3 +1,8 @@
+let clicked = false;
+let creatureX = 100;
+let creatureY = 100;
+let r = 0;
+
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -5,15 +10,23 @@ function setup() {
   // easier
   let myCanvas = createCanvas(400, 400);
   myCanvas.parent("canvas-parent");
+  
 }
 
 function draw() {
+  background(78,244,209);
   drawBackground(0, 0);
   drawCard();
-  drawCreature(100,100,color(28,198,229), color(4,0,230));
+  drawCreature(creatureX,creatureY,color(28,198,229), color(4,0,230));
+  console.log(clicked);
+  updateJellyfish();
+  console.log(creatureX);
+  updateCards();
+  console.log(r);
 }
 
-function drawCard(){
+function drawCard(r){
+  rotate(r);
   push();
   //the two cards- the white part
     push();
@@ -192,4 +205,21 @@ function drawBackground(x,y){
 
 pop();
 
+}
+
+function mouseClicked() {
+  if(mouseX > 0 && mouseX < 400 && mouseY > 0 && mouseY < 400)
+    clicked = !clicked;
+}
+
+function updateJellyfish(){
+  if(clicked){
+    creatureX = creatureX + 1;
+  }
+}
+
+function updateCards(){
+  if(creatureX > 400){
+    r=r + PI / 20;
+  }
 }
